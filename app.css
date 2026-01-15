@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+:root {
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.bg-purple-500 {
+  background-color: var(--purple-500);
+  color: var(--purple-300);
+}
+.bg-purple-500 .title,
+.bg-purple-500 h1 {
+  color: var(--white);
+}
+.bg-purple-500 img {
+  border-color: var(--purple-300);
+}
+
+.bg-grey-500 {
+  background-color: var(--grey-500);
+  color: var(--grey-200);
+}
+.bg-grey-500 .title,
+.bg-grey-500 h1 {
+  color: var(--white);
+}
+.bg-grey-500 img {
+  border-color: var(--grey-200);
+}
+
+.bg-dark-blue {
+  background-color: var(--dark-blue);
+  color: var(--grey-100);
+}
+.bg-dark-blue .title,
+.bg-dark-blue h1 {
+  color: var(--white);
+}
+.bg-dark-blue img {
+  border-color: var(--purple-500);
+}
+
+.bg-white {
+  background-color: var(--white);
+  color: var(--grey-400);
+}
+.bg-white .title,
+.bg-white h1 {
+  color: var(--grey-500);
+}
+.bg-white h2 {
+  color: var(--grey-200);
+}
+.bg-white img {
+  border-color: var(--white);
+}
+
+.card {
+  margin: 2rem 1rem;
+  min-height: 20rem;
+  padding: 2rem;
+  box-shadow: 0 8px 40px -16px var(--grey-400);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  border-radius: 12px;
+}
+
+.body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+img {
+  border-radius: 90px;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.heading {
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  align-items: center;
+  font-size: 1rem;
+}
+
+h1,
+h2 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.quotation {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  main {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(4, fit-content(20rem));
+    grid-template-rows: repeat(2, minmax(0, fit-content(20rem)));
+    gap: 1rem;
+    margin: 6rem 0;
+  }
+
+  .quotation {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 3rem;
+    border: none;
+    border-radius: 0;
+    justify-self: end;
+  }
+
+  .card {
+    margin: 0;
+    padding-bottom: 0;
+  }
+
+  .card-1 {
+    position: relative;
+    grid-column: 1 / span 2;
+  }
+
+  .card-2 {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+  }
+
+  .card-3 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .card-4 {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+  }
+
+  .card-5 {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 2;
+  }
+}
